@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jayesh Patil — Computer Engineering student building intelligent software at the intersection of AI, Full-Stack Development, and Cybersecurity." />
+  <title>Jayesh Patil — Building Intelligent Software with Purpose</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============== LOADER ============== -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__count"><span id="loaderCount">0</span></div>
+      <div class="loader__line"><span id="loaderBar"></span></div>
+      <div class="loader__meta">
+        <span>LOADING</span>
+        <span>JAYESH PATIL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== CUSTOM CURSOR ============== -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot" id="cursorDot"></div>
+    <div class="cursor__ring" id="cursorRing">
+      <span class="cursor__text" id="cursorText"></span>
+    </div>
+  </div>
+
+  <!-- ============== LIVING BACKGROUND ============== -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grid"></div>
+    <div class="bg__orb bg__orb--cyan"></div>
+    <div class="bg__orb bg__orb--violet"></div>
+    <div class="bg__noise"></div>
+    <div class="bg__particles" id="bgParticles"></div>
+  </div>
+
+  <!-- ============== NAV ============== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__brand" data-cursor="home">
+      <span class="nav__brand-mark"></span>
+      <span class="nav__brand-text">JAYESH<span>/</span>PATIL</span>
+    </a>
+    <div class="nav__links">
+      <a href="#about" data-cursor="view">About</a>
+      <a href="#focus" data-cursor="view">Focus</a>
+      <a href="#skills" data-cursor="view">Skills</a>
+      <a href="#projects" data-cursor="view">Projects</a>
+      <a href="#contact" data-cursor="connect" class="nav__cta">Contact</a>
+    </div>
+    <div class="nav__status">
+      <span class="nav__pulse"></span>
+      <span>AVAILABLE FOR WORK</span>
+    </div>
+  </nav>
+
+  <!-- ============== PROGRESS ============== -->
+  <div class="progress" id="progress"><span></span></div>
+
+  <!-- ============== DEV MODE INDICATOR (easter egg) ============== -->
+  <div class="devmode" id="devmode" aria-hidden="true">
+    <span class="devmode__dot"></span>
+    <span class="devmode__label">DEV MODE</span>
+    <span class="devmode__hint">Press D to exit</span>
+  </div>
+
+  <main>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__glow hero__glow--cyan"></div>
+        <div class="hero__glow hero__glow--violet"></div>
+      </div>
+
+      <div class="hero__content">
+        <!-- LEFT: TEXT -->
+        <div class="hero__left">
+          <div class="hero__eyebrow">
+            <span class="hero__eyebrow-dot"></span>
+            <span>COMPUTER ENGINEERING · AI · SECURITY</span>
+          </div>
+
+          <h1 class="hero__title">
+            <span class="line"><span class="line__inner">Building</span></span>
+            <span class="line"><span class="line__inner">Intelligent</span></span>
+            <span class="line"><span class="line__inner">Software <em>with</em></span></span>
+            <span class="line"><span class="line__inner">Purpose.</span></span>
+          </h1>
+
+          <p class="hero__lead">
+            <span class="reveal-line">Computer Engineering student passionate about</span>
+            <span class="reveal-line">Artificial Intelligence, Full-Stack Development,</span>
+            <span class="reveal-line">and Cybersecurity. I enjoy building scalable</span>
+            <span class="reveal-line">software and modern digital experiences.</span>
+          </p>
+
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary" data-cursor="explore">
+              <span>View Work</span>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost" data-cursor="say hi">
+              <span>Get in Touch</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: PREMIUM AVATAR -->
+        <div class="hero__right">
+          <div class="avatar" id="avatar" data-cursor="double-click">
+            <div class="avatar__glow"></div>
+            <div class="avatar__frame" id="avatarFrame">
+              <div class="avatar__border"></div>
+              <div class="avatar__reflection"></div>
+              <div class="avatar__image">
+                <img src="assets/avatar.jpg" alt="Jayesh Patil portrait" id="avatarImg" loading="eager" decoding="async" width="380" height="380" />
+              </div>
+              <div class="avatar__sheen"></div>
+            </div>
+            <div class="avatar__caption">
+              <span class="avatar__caption-line"></span>
+              <span class="avatar__caption-text">JAYESH PATIL · 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <span>SCROLL</span>
+        <div class="hero__scroll-line"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ============== ABOUT ============== -->
+    <section class="about" id="about">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <span class="section__label">About</span>
+        <span class="section__rule"></span>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__statement">
+          <h2 class="about__headline">
+            <span class="word">I</span>
+            <span class="word">build</span>
+            <span class="word">software</span>
+            <span class="word">at</span>
+            <span class="word">the</span>
+            <span class="word hl">intersection</span>
+            <span class="word">of</span>
+            <span class="word hl">intelligence,</span>
+            <span class="word">craft,</span>
+            <span class="word">and</span>
+            <span class="word hl">security.</span>
+          </h2>
+        </div>
+
+        <div class="about__body">
+          <p class="about__p">
+            I'm a Computer Engineering student passionate about Artificial Intelligence, Full-Stack Development, and Cybersecurity. I enjoy building scalable software, modern web experiences, and practical AI solutions that solve real-world problems.
+          </p>
+
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="3">0</span>
+              <span class="about__stat-label">Core Domains</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="8">0</span>
+              <span class="about__stat-label">Focus Areas</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="∞" data-text="true">0</span>
+              <span class="about__stat-label">Curiosity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOCUS (BENTO) ============== -->
+    <section class="focus" id="focus">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <span class="section__label">Focus</span>
+        <span class="section__rule"></span>
+      </div>
+
+      <h2 class="focus__title">
+        <span class="reveal-line">Eight disciplines.</span>
+        <span class="reveal-line">One continuous practice.</span>
+      </h2>
+
+      <div class="bento">
+        <article class="bento__card bento__card--lg" data-cursor="focus">
+          <div class="bento__num">01</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l3.5 8.5L28 16l-8.5 3.5L16 28l-3.5-8.5L4 16l8.5-3.5L16 4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Artificial Intelligence</h3>
+          <p>Designing systems that reason, learn, and assist — with fairness, transparency, and measurable impact at the center.</p>
+          <div class="bento__shine"></div>
+        </article>
+
+        <article class="bento__card" data-cursor="focus">
+          <div class="bento__num">02</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M9 6h14M9 16h14M9 26h14M5 6h0M5 16h0M5 26h0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Full-Stack Development</h3>
+          <p>End-to-end product thinking — from data layer to the last pixel of the interface.</p>
+        </article>
+
+        <article class="bento__card" data-cursor="focus">
+          <div class="bento__num">03</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l11 4v8c0 6.6-4.7 11-11 12-6.3-1-11-5.4-11-12V8l11-4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M11 16l3.5 3.5L21 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Responsible AI</h3>
+          <p>Bias detection, fairness metrics, and accountability built into the model lifecycle.</p>
+        </article>
+
+        <article class="bento__card bento__card--wide" data-cursor="focus">
+          <div class="bento__num">04</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="11" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M10 11V8a6 6 0 0112 0v3" stroke="currentColor" stroke-width="1.2"/><circle cx="16" cy="18" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>Threat modeling, secure architecture, and defense in depth — making trust a feature, not an afterthought.</p>
+          <div class="bento__shine"></div>
+        </article>
+
+        <article class="bento__card" data-cursor="focus">
+          <div class="bento__num">05</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 12h24M9 6V4M23 6V4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Software Architecture</h3>
+          <p>Systems that survive scale, change, and time.</p>
+        </article>
+
+        <article class="bento__card" data-cursor="focus">
+          <div class="bento__num">06</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.2"/><path d="M5 16h22M16 5c3 3.5 3 12.5 0 22M16 5c-3 3.5-3 12.5 0 22" stroke="currentColor" stroke-width="1"/></svg>
+          </div>
+          <h3>Modern UI</h3>
+          <p>Interfaces that feel inevitable — motion, type, and space working as one.</p>
+        </article>
+
+        <article class="bento__card" data-cursor="focus">
+          <div class="bento__num">07</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M13 4l-2 14M19 4l-2 14M7 9h18M6 19h18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Performance Optimization</h3>
+          <p>Every millisecond is a design decision.</p>
+        </article>
+
+        <article class="bento__card bento__card--accent" data-cursor="focus">
+          <div class="bento__num">08</div>
+          <div class="bento__icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 6a4 4 0 014 4c0 1.5-1 2.5-1 4s1 2.5 1 4a4 4 0 01-8 0c0-1.5 1-2.5 1-4s-1-2.5-1-4a4 4 0 014-4z" stroke="currentColor" stroke-width="1.2"/><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg>
+          </div>
+          <h3>Open Source</h3>
+          <p>Building in public, learning in public, contributing back.</p>
+          <div class="bento__shine"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============== SKILLS ============== -->
+    <section class="skills" id="skills">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <span class="section__label">Skills</span>
+        <span class="section__rule"></span>
+      </div>
+
+      <h2 class="skills__title">
+        <span class="reveal-line">A toolkit chosen</span>
+        <span class="reveal-line">with intention.</span>
+      </h2>
+
+      <div class="skills__grid">
+        <div class="skills__cat" data-cat>
+          <div class="skills__cat-head">
+            <span class="skills__cat-id">01</span>
+            <h3>Languages</h3>
+            <span class="skills__cat-line"></span>
+          </div>
+          <div class="skills__bars">
+            <div class="bar" data-level="92"><span class="bar__name">Python</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">92</span></div>
+            <div class="bar" data-level="90"><span class="bar__name">JavaScript</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">90</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">TypeScript</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+            <div class="bar" data-level="80"><span class="bar__name">Java</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">80</span></div>
+            <div class="bar" data-level="78"><span class="bar__name">C</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">78</span></div>
+            <div class="bar" data-level="76"><span class="bar__name">C++</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">76</span></div>
+          </div>
+        </div>
+
+        <div class="skills__cat" data-cat>
+          <div class="skills__cat-head">
+            <span class="skills__cat-id">02</span>
+            <h3>Frontend</h3>
+            <span class="skills__cat-line"></span>
+          </div>
+          <div class="skills__bars">
+            <div class="bar" data-level="95"><span class="bar__name">HTML5</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">95</span></div>
+            <div class="bar" data-level="92"><span class="bar__name">CSS3</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">92</span></div>
+            <div class="bar" data-level="88"><span class="bar__name">React</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">88</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">Next.js</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+            <div class="bar" data-level="82"><span class="bar__name">GSAP</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">82</span></div>
+          </div>
+        </div>
+
+        <div class="skills__cat" data-cat>
+          <div class="skills__cat-head">
+            <span class="skills__cat-id">03</span>
+            <h3>Backend</h3>
+            <span class="skills__cat-line"></span>
+          </div>
+          <div class="skills__bars">
+            <div class="bar" data-level="87"><span class="bar__name">Node.js</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">87</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">Express</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+            <div class="bar" data-level="80"><span class="bar__name">Flask</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">80</span></div>
+            <div class="bar" data-level="90"><span class="bar__name">REST APIs</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">90</span></div>
+          </div>
+        </div>
+
+        <div class="skills__cat" data-cat>
+          <div class="skills__cat-head">
+            <span class="skills__cat-id">04</span>
+            <h3>Database</h3>
+            <span class="skills__cat-line"></span>
+          </div>
+          <div class="skills__bars">
+            <div class="bar" data-level="82"><span class="bar__name">MongoDB</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">82</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">SQL</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">Firebase</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+          </div>
+        </div>
+
+        <div class="skills__cat" data-cat>
+          <div class="skills__cat-head">
+            <span class="skills__cat-id">05</span>
+            <h3>AI &amp; Cyber</h3>
+            <span class="skills__cat-line"></span>
+          </div>
+          <div class="skills__bars">
+            <div class="bar" data-level="82"><span class="bar__name">scikit-learn</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">82</span></div>
+            <div class="bar" data-level="78"><span class="bar__name">TensorFlow</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">78</span></div>
+            <div class="bar" data-level="80"><span class="bar__name">Fairness ML</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">80</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">OWASP</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+            <div class="bar" data-level="82"><span class="bar__name">Cryptography</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">82</span></div>
+          </div>
+        </div>
+
+        <div class="skills__cat" data-cat>
+          <div class="skills__cat-head">
+            <span class="skills__cat-id">06</span>
+            <h3>Tools</h3>
+            <span class="skills__cat-line"></span>
+          </div>
+          <div class="skills__bars">
+            <div class="bar" data-level="92"><span class="bar__name">Git</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">92</span></div>
+            <div class="bar" data-level="88"><span class="bar__name">Linux</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">88</span></div>
+            <div class="bar" data-level="80"><span class="bar__name">Docker</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">80</span></div>
+            <div class="bar" data-level="85"><span class="bar__name">Figma</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">85</span></div>
+            <div class="bar" data-level="95"><span class="bar__name">VS Code</span><span class="bar__track"><span class="bar__fill"></span></span><span class="bar__val">95</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PROJECTS ============== -->
+    <section class="projects" id="projects">
+      <div class="section__head">
+        <span class="section__index">04</span>
+        <span class="section__label">Selected Work</span>
+        <span class="section__rule"></span>
+      </div>
+
+      <div class="projects__intro">
+        <h2 class="projects__title">
+          <span class="reveal-line">Three projects.</span>
+          <span class="reveal-line">One philosophy.</span>
+        </h2>
+        <p class="projects__hint">Scroll to traverse →</p>
+      </div>
+
+      <div class="projects__track" id="projectsTrack">
+
+        <!-- PROJECT 01 -->
+        <article class="project" data-cursor="view">
+          <div class="project__inner">
+            <div class="project__meta">
+              <span class="project__num">01 / 03</span>
+              <span class="project__tag">AI · FAIRNESS · PLATFORM</span>
+            </div>
+
+            <div class="project__media">
+              <div class="project__shot">
+                <div class="shot__frame">
+                  <div class="shot__chrome">
+                    <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+                    <span class="shot__url">fairness-detection · secure</span>
+                  </div>
+                  <div class="shot__canvas shot__canvas--01">
+                    <div class="shot__grid"></div>
+                    <div class="shot__panel shot__panel--left">
+                      <div class="shot__row"></div><div class="shot__row"></div><div class="shot__row"></div>
+                      <div class="shot__metric"><span>BIAS SCORE</span><b>0.08</b></div>
+                      <div class="shot__metric shot__metric--warn"><span>FLAGGED</span><b>2</b></div>
+                    </div>
+                    <div class="shot__panel shot__panel--right">
+                      <div class="shot__chart">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                      </div>
+                      <div class="shot__chart shot__chart--line">
+                        <span></span><span></span><span></span><span></span><span></span>
+                      </div>
+                    </div>
+                    <div class="shot__scanline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__copy">
+              <h3 class="project__name">AI Fairness<br/>Detection Platform</h3>
+              <p class="project__desc">An end-to-end platform that audits machine-learning models for bias across protected attributes — surfacing fairness metrics, drift, and risk before models ever reach production.</p>
+              <div class="project__stack">
+                <span>Python</span><span>FastAPI</span><span>scikit-learn</span><span>React</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02 -->
+        <article class="project" data-cursor="view">
+          <div class="project__inner">
+            <div class="project__meta">
+              <span class="project__num">02 / 03</span>
+              <span class="project__tag">SECURITY · ENCRYPTION · WEB</span>
+            </div>
+
+            <div class="project__media">
+              <div class="project__shot">
+                <div class="shot__frame">
+                  <div class="shot__chrome">
+                    <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+                    <span class="shot__url">secure-docs · E2E encrypted</span>
+                  </div>
+                  <div class="shot__canvas shot__canvas--02">
+                    <div class="shot__grid"></div>
+                    <div class="shot__lock">
+                      <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="22" width="28" height="18" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M16 22v-6a8 8 0 0116 0v6" stroke="currentColor" stroke-width="1.4"/><circle cx="24" cy="31" r="2.5" fill="currentColor"/></svg>
+                    </div>
+                    <div class="shot__docs">
+                      <div class="shot__doc"><span></span><span></span><span></span></div>
+                      <div class="shot__doc"><span></span><span></span><span></span></div>
+                      <div class="shot__doc"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="shot__scanline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__copy">
+              <h3 class="project__name">Secure Document<br/>Sharing System</h3>
+              <p class="project__desc">A zero-knowledge document exchange built around end-to-end encryption, granular access control, and audit trails — designed so that sensitive files never travel unprotected.</p>
+              <div class="project__stack">
+                <span>Node.js</span><span>WebCrypto</span><span>PostgreSQL</span><span>React</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03 -->
+        <article class="project" data-cursor="view">
+          <div class="project__inner">
+            <div class="project__meta">
+              <span class="project__num">03 / 03</span>
+              <span class="project__tag">ANALYTICS · DASHBOARD · ML</span>
+            </div>
+
+            <div class="project__media">
+              <div class="project__shot">
+                <div class="shot__frame">
+                  <div class="shot__chrome">
+                    <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+                    <span class="shot__url">fairness-analytics · live</span>
+                  </div>
+                  <div class="shot__canvas shot__canvas--03">
+                    <div class="shot__grid"></div>
+                    <div class="shot__kpis">
+                      <div class="shot__kpi"><span>EQUITY</span><b>94%</b></div>
+                      <div class="shot__kpi"><span>DRIFT</span><b>LOW</b></div>
+                      <div class="shot__kpi"><span>RISK</span><b>0.03</b></div>
+                    </div>
+                    <div class="shot__bigchart">
+                      <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <path d="M0 60 L25 45 L50 52 L75 30 L100 38 L125 18 L150 26 L175 10 L200 16" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M0 70 L25 62 L50 66 L75 50 L100 56 L125 40 L150 46 L175 32 L200 36" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+                      </svg>
+                    </div>
+                    <div class="shot__scanline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__copy">
+              <h3 class="project__name">AI Fairness<br/>Analytics Dashboard</h3>
+              <p class="project__desc">A real-time dashboard that visualizes fairness performance across model versions — translating abstract metrics into clear, actionable signals for teams shipping AI responsibly.</p>
+              <div class="project__stack">
+                <span>Next.js</span><span>D3</span><span>Python</span><span>WebSocket</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects__progress" id="projectsProgress"><span></span></div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section class="contact" id="contact">
+      <div class="section__head">
+        <span class="section__index">05</span>
+        <span class="section__label">Contact</span>
+        <span class="section__rule"></span>
+      </div>
+
+      <div class="contact__inner">
+        <h2 class="contact__title">
+          <span class="line"><span class="line__inner">Let's build</span></span>
+          <span class="line"><span class="line__inner">something <em>worth</em></span></span>
+          <span class="line"><span class="line__inner">remembering.</span></span>
+        </h2>
+
+        <a href="mailto:jayeshpatil4158@gmail.com" class="contact__email" data-cursor="write">
+          jayeshpatil4158@gmail.com
+          <span class="contact__email-arrow">→</span>
+        </a>
+
+        <div class="contact__links">
+          <a href="https://github.com/Jayesh-Git-Pixel" target="_blank" rel="noopener" class="contact__link" data-cursor="github" aria-label="GitHub">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0112 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jayesh-patil-a16306339" target="_blank" rel="noopener" class="contact__link" data-cursor="linkedin" aria-label="LinkedIn">
+            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+
+        <div class="footer">
+          <div class="footer__by">Designed and developed by</div>
+          <div class="footer__name">Jayesh Rajendra Patil</div>
+          <div class="footer__year">2026</div>
+          <div class="footer__icons">
+            <a href="https://github.com/Jayesh-Git-Pixel" target="_blank" rel="noopener" class="footer__icon" data-cursor="github" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0112 6.84c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/jayesh-patil-a16306339" target="_blank" rel="noopener" class="footer__icon" data-cursor="linkedin" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== PROFILE CARD (easter egg, double-click avatar) ============== -->
+  <div class="profile-card" id="profileCard" aria-hidden="true">
+    <div class="profile-card__inner">
+      <button class="profile-card__close" id="profileCardClose" aria-label="Close">×</button>
+      <div class="profile-card__avatar">
+        <img src="assets/avatar.jpg" alt="Jayesh Patil" />
+      </div>
+      <h3 class="profile-card__name">Jayesh Rajendra Patil</h3>
+      <p class="profile-card__role">Computer Engineering · AI · Full-Stack · Cybersecurity</p>
+      <div class="profile-card__row"><span>EMAIL</span><a href="mailto:jayeshpatil4158@gmail.com">jayeshpatil4158@gmail.com</a></div>
+      <div class="profile-card__row"><span>GITHUB</span><a href="https://github.com/Jayesh-Git-Pixel" target="_blank" rel="noopener">@Jayesh-Git-Pixel</a></div>
+      <div class="profile-card__row"><span>LINKEDIN</span><a href="https://www.linkedin.com/in/jayesh-patil-a16306339" target="_blank" rel="noopener">in/jayesh-patil</a></div>
+      <div class="profile-card__hint">Double-click the avatar to open this card.</div>
+    </div>
+  </div>
+
+  <!-- ============== CDN ============== -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
